@@ -13,14 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@home');
 
-Route::get('/test', function(){
-    return 'Ini test route';
-});
+Route::get('/register', 'AuthController@register');
 
-Route::get('/halo/{nama}', function($nama){
-    return 'Halo '.$nama;
-});
+// Route::get('/welcome', 'AuthController@welcome');
+Route::post('/welcome', 'AuthController@welcome_post');
